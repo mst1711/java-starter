@@ -12,7 +12,7 @@ CONFIG_FILE=/path/to/config.yml
 Example of configuration file you can see in apps-example.yml file  
 
 If your application needs hdfs access, starter can detect current master node in HA cluster  
-and set environment variable hdfs_address with active master address.  
+and will set environment variable hdfs_address with active master address.  
 
 Thats all.  
 Good luck ) 
