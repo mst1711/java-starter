@@ -2,7 +2,7 @@
 applications:
   app1:
     starter:
-      location: '/opt/apps/app1/app1.jar'
+      location: '/opt/apps/app2/app2.jar'
       heap_size: '2048m'
       instances:
         - { port: 8089, name: 'app1' }
@@ -20,10 +20,14 @@ applications:
       custom_variable: custom_value
 
 common_vars:
-  ## If variable starter_ambari_url is present, starter will try detect hadoop hdfs active master by ambari API and
-  ## then set variable hdfs_address=hdfs.master.host
+  ## If variable starter_ambari_url is present and variable hdfs_address=auto, starter will try detect hadoop hdfs active master by ambari API and
+  ## then set variable hdfs_address=hdfs://hdfs.master.host:8020
   ## If you don't need this functional, just not set this variable
   # starter_ambari_url: http://ambari.host.name:8080/api/v1/clusters/[cluster_name]
   # starter_ambari_user: admin
   # starter_ambari_password: admin
+
+  # can be as address hdfs://hdfsmaster.domain.local:8020 and "auto"
+  # hdfs_address: auto
+
   common_varibale1: common_value1

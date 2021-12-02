@@ -36,7 +36,7 @@ class Starter:
       exit(1)
     self.load_common_variables()
     self.load_specific_variables()
-    if self.CONFIG['common_vars']['hdfs_address'] == "auto":
+    if 'hdfs_address' in self.CONFIG['common_vars'] and self.CONFIG['common_vars']['hdfs_address'] == "auto":
       self.detect_hdfs_master()
     self.start_app()
 
